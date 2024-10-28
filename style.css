@@ -238,5 +238,38 @@ body {
     .section4-paragraph ul {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .section5 img {
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section4-paragraph ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .section4-paragraph ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section5 {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .section5 .card {
+        width: 80vw;
+        margin-bottom: 40px;
+        padding: 20px;
+        margin-left: -11.5vw;
+    }
+
+    .section5 img {
+        width: 55vw;
+    }
 }
 
