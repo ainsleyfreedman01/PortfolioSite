@@ -277,7 +277,7 @@ body {
 
 @supports (-webkit-overflow-scrolling: touch) {
     body {
-        overflow-x: clip; /* Use hidden as a fallback for Safari */
+        overflow-x: hidden;
     }
 }
 
