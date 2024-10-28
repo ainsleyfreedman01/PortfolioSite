@@ -199,6 +199,10 @@ body {
     text-decoration: underline;
 }
 
+.section6-paragraph {
+    margin-right: 15px;
+}
+
 .section6-paragraph a {
     color: white;
     text-decoration: none;
@@ -262,17 +266,27 @@ body {
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section5-heading {
+        margin-left: 50px;
     }
 
     .section5 .card {
         width: 80vw;
         margin-bottom: 40px;
         padding: 20px;
-        margin-left: -11.5vw;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .section5 img {
-        width: 55vw;
+        width: 75vw;
     }
 }
 
