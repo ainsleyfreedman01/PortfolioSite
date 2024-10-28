@@ -205,6 +205,7 @@ body {
     font-size: clamp(2rem, 5vw, 3rem);
     margin: 20px;
     right: 15%;
+    top: 5.75px;
     position: relative;
 }
 
