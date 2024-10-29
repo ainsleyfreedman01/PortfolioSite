@@ -74,7 +74,7 @@ body {
 .section2-paragraph, .section3-paragraph {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     text-wrap: wrap;
-    margin-right: -30px;
+    margin-right: 0px;
     font-family: 'Open Sans', sans-serif;
     margin-top: -10px;
 
@@ -94,7 +94,7 @@ body {
 
 .section3-paragraph {
     margin-left: 50px;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 .section4-paragraph ul {
