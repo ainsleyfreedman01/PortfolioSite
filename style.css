@@ -88,7 +88,7 @@ body {
     transform: translateX(0);
 }
 
-.section3-heading, .section4-heading, .section6-heading {
+.section3-heading, .section4-heading {
     margin-left: 50px;
 }
 
@@ -193,6 +193,7 @@ body {
 }
 
 .section6-heading {
+    margin-left: 30px;
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
@@ -200,14 +201,14 @@ body {
 }
 
 .section6-paragraph {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .section6-paragraph a {
     color: white;
     text-decoration: none;
     font-size: clamp(2rem, 5vw, 3rem);
-    padding: 15px;
+    padding: 10px;
     right: 15%;
     top: 5.75px;
     position: relative;
