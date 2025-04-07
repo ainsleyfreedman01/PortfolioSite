@@ -46,17 +46,21 @@ body {
     border: 8px solid #6A5ACD;
 }
 
-.section1, .section5 {
+.section1,
+.section5 {
     background-color: white;
     padding: 50px;
 }
 
-.section2, .section3 {
+.section2,
+.section3 {
     margin: 50px;
-    
+
 }
 
-.section2-container, .section3-container, .section4-container {
+.section2-container,
+.section3-container,
+.section4-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,20 +68,23 @@ body {
     margin-bottom: 75px;
 }
 
-.section2-heading, .section3-heading, .section4-heading, .section6-heading {
+.section2-heading,
+.section3-heading,
+.section4-heading,
+.section6-heading {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
     text-decoration: underline;
 }
 
-.section2-paragraph, .section3-paragraph {
+.section2-paragraph,
+.section3-paragraph {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     text-wrap: wrap;
     margin-right: 0px;
     font-family: 'Open Sans', sans-serif;
     margin-top: -10px;
-
     opacity: 0;
     transform: translateX(-100%);
     transition: all 1.5s ease-in-out;
@@ -88,7 +95,8 @@ body {
     transform: translateX(0);
 }
 
-.section3-heading, .section4-heading {
+.section3-heading,
+.section4-heading {
     margin-left: 50px;
 }
 
@@ -126,6 +134,34 @@ body {
     text-align: center;
 }
 
+#other-skills-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Style each <li> to look like a bubble */
+#other-skills-list li {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    border: 2px solid white;
+    font-weight: 600;
+}
+
+#other-skills-list li:hover {
+    background-color: white;
+    color: #6A5ACD;
+    cursor: pointer;
+}
+
 .section5 .card {
     display: flex;
     flex-direction: column;
@@ -160,7 +196,7 @@ body {
     margin-right: auto;
 }
 
-.section5-paragraph a{
+.section5-paragraph a {
     text-decoration: none;
     color: white;
 }
@@ -172,7 +208,7 @@ body {
     display: inline-block;
 }
 
-.section5-paragraph li i:hover { 
+.section5-paragraph li i:hover {
     transform: translate(2.5px, -2.5px);
     transition: all 0.2s ease-in-out;
 }
@@ -201,15 +237,15 @@ body {
 }
 
 .section6-paragraph {
-    margin-right: 10px;
+    margin-right: -5px;
 }
 
 .section6-paragraph a {
     color: white;
     text-decoration: none;
     font-size: clamp(2rem, 5vw, 3rem);
-    padding: 10px;
-    right: 15%;
+    padding: 25px;
+    right: 10%;
     top: 5.75px;
     position: relative;
 }
@@ -218,6 +254,41 @@ body {
     color: #362e68;
     transition: all 0.2s ease-in-out;
 }
+
+/* Tooltip container */
+.resume-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.resume-link:hover::after {
+    content: "Click to view my resume!";
+    position: absolute;
+    bottom: 100%; /* Tooltip appears above the link */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+/* Animation for tooltip */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
 @media only screen and (max-width: 932px) {
@@ -250,11 +321,21 @@ body {
     .section5 img {
         width: 60vw;
     }
+
+    .section6-paragraph a {
+        right: 10%;
+        padding: 15px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .section4-paragraph ul {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section6-paragraph a {
+        right: 10%;
+        padding: 15px;
     }
 }
 
@@ -293,10 +374,6 @@ body {
     .section6-heading {
         margin-left: 30px;
     }
-
-    .section6-paragraph a {
-        right: 10%;
-    }
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
@@ -304,4 +381,3 @@ body {
         overflow-x: hidden;
     }
 }
-
