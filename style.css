@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    user-select: none;
 }
 
 body {
@@ -230,7 +231,7 @@ body {
 
 .section6-heading {
     margin-left: 30px;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 3rem);
     margin-bottom: 20px;
     font-family: 'Raleway', sans-serif;
     text-decoration: underline;
@@ -249,7 +250,6 @@ body {
     font-size: clamp(2rem, 5vw, 3rem);
     padding: 25px;
     right: 10%;
-    top: 5.75px;
     position: relative;
     width: 30px;
     height: 30px;
@@ -385,15 +385,12 @@ body {
 
 @media screen and (max-width: 460px) {
     .section6-paragraph {
-        display: flex;
-        flex: 0 0 25%;
-        flex-wrap: wrap;
-        gap: 7px 10px;
         margin-right: 1vw;
     }
     .section6-paragraph a {
         right: 10%;
-        padding: 5px;
+        padding: 6px;
+        font-size: 1.6rem;
     }
 }
 
