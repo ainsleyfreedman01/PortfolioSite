@@ -85,7 +85,10 @@ body {
 .section2,
 .section3 {
     margin: 50px;
+}
 
+.section2-paragraph {
+    margin-bottom: -25px;
 }
 
 .section2-container,
@@ -160,13 +163,18 @@ body {
     text-align: center;
 }
 
-#other-skills-list {
+#other-skills-list, .languages-used {
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+}
+
+.languages-used {
+    gap: 10px;
+    margin-top: -5px;
 }
 
 /* Style each <li> to look like a bubble */
@@ -184,6 +192,17 @@ body {
     overflow: hidden;
 }
 
+.languages-used li {
+    color: var(--primary);
+    border: 3px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: clamp(14px, 2vw, 20px);
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
 #other-skills-list li:hover {
     background-color: white;
     color: #6A5ACD;
@@ -192,13 +211,21 @@ body {
     box-shadow: 0 5px 15px rgba(106, 90, 205, 0.3);
 }
 
+.languages-used li:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
 .section5 .card {
     background: var(--white);
     color: var(--text-dark);
     border: 1px solid rgba(106, 90, 205, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-    padding: 2rem;
+    padding: 1.8rem;
+    margin-bottom: 20px;
+    width: 90%;
 }
 
 .section5 .card:hover {
@@ -208,7 +235,7 @@ body {
 
 .section5 .card h3 {
     color: var(--primary);
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -258,7 +285,7 @@ body {
 }
 
 .section5-paragraph {
-    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
     text-wrap: wrap;
     font-family: 'Open Sans', sans-serif;
     margin-top: -10px;
@@ -285,7 +312,9 @@ body {
 }
 
 .section5 img {
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
     border-radius: 10px;
 }
@@ -737,4 +766,78 @@ section[id] {
     from { background-position: 0 0; }
     to { background-position: 200px 0; }
 }
+
+/* Project Section Styles */
+.card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(106, 90, 205, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* Show pointer cursor on the entire card */
+}
+
+/* Make the entire card a clickable link */
+.card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Hover effects */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(106, 90, 205, 0.2);
+}
+
+/* For cards without links */
+.card.no-link {
+    cursor: default;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+    .card h3 {
+        font-size: clamp(2.5rem, 4.5vw, 3.2rem);
+    }
+
+    .card h3 i {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .card h3 {
+        font-size: clamp(3rem, 5.5vw, 3.8rem);
+    }
+
+    .card h3 i {
+        font-size: 1.1em;
+    }
+}
+
+/* Icon styles */
+.card h3 i {
+    font-size: 0.9em;
+    opacity: 0;
+    transform: translateX(-10px); /* Start further left */
+    transition: all 0.4s ease; /* Slightly slower for smoother effect */
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px;
+    margin-left: -10px;
+    visibility: hidden; /* Hide initially */
+}
+
+/* Hover effect */
+.card:hover h3 i {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible; /* Show on hover */
+}
+
 
