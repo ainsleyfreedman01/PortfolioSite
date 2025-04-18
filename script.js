@@ -63,21 +63,99 @@ navMenu.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
-// Scroll to top functionality
-const scrollTop = document.querySelector('.scroll-top');
+// Track current section and update active nav link
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 200) {
-        scrollTop.classList.add('visible');
-    } else {
-        scrollTop.classList.remove('visible');
-    }
+function updateActiveLink() {
+    let current = '';
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const isDesktop = window.innerWidth >= 1024;
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+        
+        if (section.id === 'contact') {
+            const contactBuffer = isDesktop ? 350 : 300;
+            if (scrollPosition >= sectionTop - contactBuffer) {
+                current = section.getAttribute('id');
+            }
+        } else if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').slice(1);
+        link.classList.remove('active');
+        if (linkHref === current) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Update on scroll without debounce
+window.addEventListener('scroll', updateActiveLink);
+
+// Update on page load and window resize
+updateActiveLink();
+window.addEventListener('resize', updateActiveLink);
+
+// Slideshow functionality
+const slideshowWrapper = document.querySelector('.slideshow-wrapper');
+const slides = document.querySelectorAll('.project-slide');
+const dots = document.querySelectorAll('.dot');
+const prevButton = document.querySelector('.slideshow-button.prev');
+const nextButton = document.querySelector('.slideshow-button.next');
+
+let currentSlide = 0;
+const slideCount = slides.length;
+
+function updateSlideshow() {
+    slideshowWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slideCount;
+    updateSlideshow();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+    updateSlideshow();
+}
+
+// Event listeners
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlideshow();
+    });
 });
 
-scrollTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+// Show/hide navbar on scroll
+const navbar = document.querySelector('.navbar');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 100) { // Show navbar after scrolling 100px
+        navbar.classList.add('visible');
+    } else {
+        navbar.classList.remove('visible');
+    }
+    
+    lastScrollTop = scrollTop;
 });
 
