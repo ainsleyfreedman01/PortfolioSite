@@ -886,21 +886,19 @@ section[id] {
 /* Icon styles */
 .card h3 i {
     font-size: 0.9em;
-    opacity: 0;
-    transform: translateX(-10px); /* Start further left */
+
+    transform: translateX(-5px); /* Start further left */
     transition: all 0.4s ease; /* Slightly slower for smoother effect */
     display: inline-flex;
     align-items: center;
     margin-top: 2px;
-    margin-left: -10px;
-    visibility: hidden; /* Hide initially */
+    margin-left: px;
 }
 
 /* Hover effect */
 .card:hover h3 i {
     opacity: 1;
     transform: translateX(0);
-    visibility: visible; /* Show on hover */
 }
 
 /* Slideshow Styles */
