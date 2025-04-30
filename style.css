@@ -1007,6 +1007,7 @@ section[id] {
 @media (max-width: 480px) {
     .card img {
         max-height: 250px;
+        zoom: 50%;
     }
 
     .slideshow-button.prev {
