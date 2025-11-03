@@ -178,108 +178,39 @@
     <section class="section5" id="projects">
         <div class="section5-container">
             <h2 class="section5-heading">Projects</h2>
-            <div class="section5-paragraph">
-                <div class="slideshow-container">
-                    <div class="slideshow-wrapper">
-                        <div class="project-slide"
-                            onclick="window.open('https://ainsleyfreedman01.github.io/Bnai_Mitzvah_Chatbot/', '_blank')">
-                            <div class="card">
-                                <h3>B'nai Mitzvah Chatbot&nbsp;&nbsp;
-                                    <li><i class="fa-solid fa-arrow-up-right-from-square"></i></li>
-                                </h3>
-                                <img src="./galleryImages/bnaiMitzvahChatbot.png" alt="B'nai Mitzvah Chatbot">
-                                <p>
-                                    A rule-based chatbot that guides users in learning about the prayers required for
-                                    their
-                                    B'nai Mitzvah, offering clear and structured information on each prayer.
-                                    <br>
-                                    <br>
-                                    <i>The rule-based design was implemented intentionally to ensure accuracy and consistency when teaching sacred texts, prioritizing reliability and respectful representation over generative methods.</i>
-                                </p>
-                                <ul class="languages-used">
-                                    <li class="language">React</li>
-                                    <li class="language">JavaScript</li>
-                                    <li class="language">Prompt Engineering</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="project-slide"
-                            onclick="window.open('https://github.com/ainsleyfreedman01/AntisemitismAnalysisML', '_blank')">
-                            <div class="card">
-                                <h3>Analyzing Antisemitism: Insights with ML&nbsp;&nbsp;
-                                    <li><i class="fa-solid fa-arrow-up-right-from-square"></i></li>
-                                </h3>
-                                <img src="./galleryImages/campus.png" alt="Antisemitism ML Model">
-                                <p>
-                                    A data-driven analysis of past antisemitism incident reports on college campuses,
-                                    supported by machine learning models to identify emerging trends and patterns.
-                                </p>
-                                <ul class="languages-used">
-                                    <li class="language">Matplotlib</li>
-                                    <li class="language">pandas</li>
-                                    <li class="language">scikit-learn</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="project-slide"
-                            onclick="window.open('https://www.chaitunesacappella.com/', '_blank')">
-                            <div class="card">
-                                <h3>ChaiTunes A Cappella Official Site&nbsp;&nbsp;
-                                    <li><i class="fa-solid fa-arrow-up-right-from-square"></i></li>
-                                </h3>
-                                <img src="./galleryImages/chaitunesAcappella.png"
-                                    alt="ChaiTunes A Cappella Official Site">
-                                <p>
-                                    The official website for ChaiTunes A Cappella, Emory's culturally Jewish a cappella
-                                    group, showcasing their
-                                    group, profile and members.
-                                </p>
-                                <ul class="languages-used">
-                                    <li class="language">Next.js</li>
-                                    <li class="language">Tailwind</li>
-                                    <li class="language">EmailJS</li>
-                                    <li class="language">Supabase</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="project-slide"
-                            onclick="window.open('https://www.thecomppendium.com/', '_blank')">
-                            <div class="card">
-                                <h3>The CompPendium&nbsp;&nbsp;
-                                    <li><i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                    </li>
-                                </h3>
-                                <img src="./galleryImages/theComppendium.png" alt="The CompPendium Blog">
-                                <p>A computer science blog to share with other students and learners interested in
-                                    computer
-                                    science.
-                                </p>
-                                <ul class="languages-used">
-                                    <li class="language">HTML</li>
-                                    <li class="language">CSS</li>
-                                    <li class="language">Bootstrap</li>
-                                    <li class="language">JavaScript</li>
-                                    <li class="langauges">Node.js</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="projects-grid">
+                <a class="project-card" href="https://ainsleyfreedman01.github.io/Bnai_Mitzvah_Chatbot/" target="_blank" rel="noopener">
+                    <img src="./galleryImages/bnaiMitzvahChatbot.png" alt="B'nai Mitzvah Chatbot" loading="lazy" decoding="async">
+                    <div class="project-content">
+                        <h3>B'nai Mitzvah Chatbot <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
+                        <p>Rule-based chatbot designed to teach sacred prayers with clarity, consistency, and respect.</p>
+                        <div class="tags"><span>React</span><span>JavaScript</span><span>Prompt Engineering</span></div>
                     </div>
-                    <button class="slideshow-button prev" aria-label="Previous project">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slideshow-button next" aria-label="Next project">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="slideshow-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+                </a>
+                <a class="project-card" href="https://github.com/ainsleyfreedman01/AntisemitismAnalysisML" target="_blank" rel="noopener">
+                    <img src="./galleryImages/campus.png" alt="Antisemitism ML Model" loading="lazy" decoding="async">
+                    <div class="project-content">
+                        <h3>Analyzing Antisemitism: Insights with ML <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
+                        <p>Data-driven analysis of campus incidents, supported by ML models to spot trends and patterns.</p>
+                        <div class="tags"><span>Matplotlib</span><span>pandas</span><span>scikit-learn</span></div>
                     </div>
-                </div>
+                </a>
+                <a class="project-card" href="https://www.chaitunesacappella.com/" target="_blank" rel="noopener">
+                    <img src="./galleryImages/chaitunesAcappella.png" alt="ChaiTunes A Cappella Official Site" loading="lazy" decoding="async">
+                    <div class="project-content">
+                        <h3>ChaiTunes A Cappella Official Site <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
+                        <p>Official site for Emory's culturally Jewish a cappella group—group profile and members.</p>
+                        <div class="tags"><span>Next.js</span><span>Tailwind</span><span>EmailJS</span><span>Supabase</span></div>
+                    </div>
+                </a>
+                <a class="project-card" href="https://www.thecomppendium.com/" target="_blank" rel="noopener">
+                    <img src="./galleryImages/theComppendium.png" alt="The CompPendium Blog" loading="lazy" decoding="async">
+                    <div class="project-content">
+                        <h3>The CompPendium <i class="fa-solid fa-arrow-up-right-from-square"></i></h3>
+                        <p>A computer science blog for students and learners—simple explanations and helpful references.</p>
+                        <div class="tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span><span>Node.js</span></div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>

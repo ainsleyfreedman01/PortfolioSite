@@ -103,45 +103,7 @@ window.addEventListener('scroll', updateActiveLink);
 updateActiveLink();
 window.addEventListener('resize', updateActiveLink);
 
-// Slideshow functionality
-const slideshowWrapper = document.querySelector('.slideshow-wrapper');
-const slides = document.querySelectorAll('.project-slide');
-const dots = document.querySelectorAll('.dot');
-const prevButton = document.querySelector('.slideshow-button.prev');
-const nextButton = document.querySelector('.slideshow-button.next');
-
-let currentSlide = 0;
-const slideCount = slides.length;
-
-function updateSlideshow() {
-    slideshowWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-    
-    // Update dots
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slideCount;
-    updateSlideshow();
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-    updateSlideshow();
-}
-
-// Event listeners
-prevButton.addEventListener('click', prevSlide);
-nextButton.addEventListener('click', nextSlide);
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlideshow();
-    });
-});
+// Slideshow code removed — grid gallery doesn't require JS
 
 // Show/hide navbar on scroll
 const navbar = document.querySelector('.navbar');

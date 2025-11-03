@@ -284,15 +284,16 @@ body {
     animation: shiftLong 3s linear infinite;
 }
 
-.section5-paragraph {
-    font-size: clamp(1rem, 3.5vw, 1.1rem);
-    text-wrap: wrap;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: -10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* New projects grid */
+.projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-top:10px; padding: 0 20px; }
+.project-card { display:block; position:relative; background:#ffffff; color:#1f1f25; border:1px solid rgba(0,0,0,0.08); border-radius:16px; overflow:hidden; text-decoration:none; box-shadow: 0 8px 22px rgba(0,0,0,0.12); transform: translateY(0); transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.18); }
+.project-card img { width:100%; height:180px; object-fit:cover; display:block; margin-top:24px; }
+.project-content { padding:14px 14px 18px; text-align:left; }
+.project-content h3 { margin:0 0 8px; font-size:18px; color:#2b2666; display:flex; align-items:center; gap:8px; }
+.project-content p { margin:0 0 10px; color:#333; font-size:14px; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; }
+.tags span { font-size:12px; padding:4px 8px; border-radius:999px; background:rgba(255,255,255,0.9); color:#473d88; border:1px solid rgba(106,90,205,0.25); }
 
 .section5-paragraph a {
     text-decoration: none;
@@ -667,7 +668,7 @@ body {
 
 @media only screen and (max-width: 600px) {
     .section4-paragraph ul {
-        grid-width: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .section5 {
@@ -1022,6 +1023,32 @@ section[id] {
         width: 130% !important;
         margin-left: -15% !important;
     }
+}
+
+/* Make project images fully visible on small screens */
+@media (max-width: 640px) {
+    .project-card img { height: auto; max-height: none; object-fit: contain; }
+}
+
+/* Improve gallery readability at tablet widths: switch to flex */
+@media (max-width: 932px) {
+    .projects-grid { display: flex; flex-direction: column; gap: 24px; }
+    /* Add horizontal breathing room for project cards on small screens */
+    .project-card { margin-left: 16px; margin-right: 16px; }
+    .project-card img { height: auto; object-fit: contain; }
+}
+
+/* Single-column stack on narrow phones (flex) */
+@media (max-width: 768px) {
+    .projects-grid { display: flex; flex-direction: column; gap: 22px; }
+    /* Maintain side margins for even tighter screens */
+    .project-card { margin-left: 16px; margin-right: 16px; }
+    .project-card img { height: auto; object-fit: contain; }
+}
+
+/* Make project images/cards wider on very small screens by reducing side gutters */
+@media (max-width: 640px) {
+    .project-card { margin-left: 8px; margin-right: 8px; }
 }
 
 
