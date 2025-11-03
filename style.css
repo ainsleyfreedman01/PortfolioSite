@@ -235,6 +235,7 @@ body {
         line-height: -1 !important;
         padding: 0.15rem 0 !important;
         position: relative !important;
+        margin: 0 auto !important;
     }
 
     .nav-link::after {
@@ -1150,6 +1151,7 @@ section {
         line-height: -1 !important;
         padding: 0.15rem 0 !important;
         position: relative !important;
+        margin: 0 auto !important;
     }
 
     .nav-link::after {
